@@ -14,10 +14,11 @@ function printWelcomeMessage() {
 }
 
 function playRound(userMove) {
-  userMove = userMove.trim()
+  userMove = userMove.trim().toLowerCase()
   if (userMove === 'quit') {
     done()
   }
+  
   const aiMove = logic.computerMove()
   const result = logic.calculateWinner(userMove, aiMove)
   printMoves(userMove, aiMove, result)
